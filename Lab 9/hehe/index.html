@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1476</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <center>
+        <div style="border: 3px black; border-style: ridge;height: auto;width: 330px; align-self: center;">
+            <div style="border: 3px black; border-style: ridge; margin: auto;">
+                <font size = "6" ><b>BMI Calculator </b></font>
+                <select id="sex" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <br>
+            </div>
+    
+            <div style="border: 3px black; border-style: ridge;">
+                <font size = "6" ><b>Enter Your Weight<br></b></font>
+                <form>
+                    (in pounds) <input type="number" id="weight">
+                </form>
+                <br>
+            </div>
+    
+            <div style="border: 3px black; border-style: ridge;">
+                <font size = "6" ><b>Enter Your Height<br></b></font>
+                
+                <form>
+                    (in feet) <input type="number" id="height-feet">
+                    <br> (in inches)
+                    <input type="number" id="height-inches">            
+                </form>
+                <br>
+            </div>
+            <div style="border: 3px black; border-style: ridge;">
+                <br>
+                <center><button onclick="getBMI()">Calculate</button></center>
+                <br>
+            </div>
+    
+            <div style="border: 3px black; border-style: ridge;display: flex;">
+    
+                <div style="border-top: 3px black ridge;border-bottom: 3px black ridge;border-left: 3px black ridge;"><font size = "5" ><b>YOUR BMI  </b></font></div>
+                <div style = "border-top: 3px black ridge;border-bottom: 3px black ridge;border-right: 3px black ridge;; width: 10px;"> </div>
+                <div style="border: 3px black ridge;">
+                    <textarea id="out" style = "height: auto; width: auto;" readonly></textarea>
+                </div>
+                <br>
+            </div>
+            
+        </div>
+        <script>
+            putBMI()
+        </script>
+    </center>
+    
+</body>
+</html>

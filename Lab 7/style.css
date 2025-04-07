@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rainbow-text {
+    text-align: center;
+    font-size: 3em;
+    background: linear-gradient(
+        to right,
+        #ff0000,
+        #ff7f00,
+        #ffff00,
+        #00ff00,
+        #0000ff,
+        #4b0082,
+        #8b00ff
+    );
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.background-container {
+    background-image: url('https://images.unsplash.com/photo-1444212477490-ca407925329e');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: 30px;
+    min-height: 600px;
+    position: relative;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    column-count: 3;
+    column-gap: 40px;
+    line-height: 30px;
+}
+
+.pet-description {
+    break-inside: avoid;
+    margin-bottom: 20px;
+}
+
+.ball-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#svg_ball{
+    animation: bounce 3s infinite ease-out; 
+    animation-direction: reverse;
+}
+@keyframes bounce {
+    0% {
+        transform: translate3d(0, 0, 0) skewY(0) rotateZ(0deg);
+    }
+    50% {
+    transform: translate3d(0, -50px, 0) skewY(10deg) rotateZ(-180deg);
+    }
+    100% {
+    transform: translate3d(0, 0, 0) skewY(0) rotateZ(-360deg);
+    }
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 20px;
+}

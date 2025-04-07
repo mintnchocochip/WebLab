@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Receipt</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Order Receipt</h1>
+      <div id="receipt"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const params = new URLSearchParams(window.location.search);
+
+        const customerName = params.get("customerName") || "";
+        const phoneNumber = params.get("phoneNumber") || "";
+        const email = params.get("email") || "";
+        const appleQty = parseInt(params.get("appleQty")) || 0;
+        const bananaQty = parseInt(params.get("bananaQty")) || 0;
+        const avocadoQty = parseInt(params.get("avocadoQty")) || 0;
+
+        const applePrice = 10;
+        const bananaPrice = 5;
+        const avocadoPrice = 7;
+
+        const appleTotal = appleQty * applePrice;
+        const bananaTotal = bananaQty * bananaPrice;
+        const avocadoTotal = avocadoQty * avocadoPrice;
+        const grandTotal = appleTotal + bananaTotal + avocadoTotal;
+
+        const receiptDiv = document.getElementById("receipt");
+        receiptDiv.innerHTML = `
+          <p><strong>Customer Name:</strong> ${customerName}</p>
+          <p><strong>Phone Number:</strong> ${phoneNumber}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <hr />
+          <h2>Order Details</h2>
+          <p>Apples: ${appleQty} kg x $${applePrice} = $${appleTotal}</p>
+          <p>Bananas: ${bananaQty} kg x $${bananaPrice} = $${bananaTotal}</p>
+          <p>Avocados: ${avocadoQty} kg x $${avocadoPrice} = $${avocadoTotal}</p>
+          <h3>Total: $${grandTotal}</h3>
+        `;
+      });
+    </script>
+  </body>
+</html>

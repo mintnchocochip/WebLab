@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>23BCE1476</title> 
+
+    <link rel="stylesheet" href="style.css"> 
+
+         
+
+</head> 
+
+<body> 
+
+    <div class="container"> 
+
+        <h2>Airline Reservation System</h2> 
+
+        <label for="name">Enter Your Name:</label><br> 
+
+        <input type="text" id="name" placeholder="Your Name"><br><br> 
+
+  
+
+        <label for="section">Choose Class:</label><br> 
+
+        <select id="section"> 
+
+            <optgroup label = "First-Class"> 
+
+            <option value="1">1</option> 
+
+            <option value="2">2</option> 
+
+            <option value="3">3</option> 
+
+            <option value="4">4</option> 
+
+            <option value="5">5</option> 
+
+            </optgroup> 
+
+            <optgroup label = "Economy"> 
+
+            <option value="6">6</option> 
+
+            <option value="7">7</option> 
+
+            <option value="8">8</option> 
+
+            <option value="9">9</option> 
+
+            <option value="10">10</option> 
+
+        </select><br><br> 
+
+  
+
+        <button onclick="bookSeat()">Book Seat</button> 
+
+  
+
+        <h3>Seat Availability</h3> 
+
+        <div class="seats" id="seatChart"></div> 
+
+  
+
+        <div class="boarding-pass" id="boardingPass"> 
+
+            <h3>Boarding Pass</h3> 
+
+            <p><strong>Name:</strong> <span id="bpName"></span></p> 
+
+            <p><strong>Seat Number:</strong> <span id="bpSeat"></span></p> 
+
+            <p><strong>Class:</strong> <span id="bpClass"></span></p> 
+
+            <p>Enjoy your flight!</p> 
+
+        </div> 
+
+    </div> 
+
+  
+
+    <script src = "script2.js"> 
+
+    </script> 
+
+</body> 
+
+</html> 

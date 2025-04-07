@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>23BCE1476</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Grocery Order Form</h1>
+      <form id="orderForm" method="GET" action="receipt.html" target="_blank">
+        <label for="customerName">Customer Name</label>
+        <input type="text" id="customerName" name="customerName" required />
+
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <hr />
+
+        <h2 style="text-align: left;">Products</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Item</th>
+              <th>Quantity (kg)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="apple.jpg" alt="Apple" style="width: 50px; height: 50px;" />
+              </td>
+              <td>
+                <input type="checkbox" id="appleSelect" name="appleSelect" />
+                <label for="appleSelect">Apple $10/kg</label>
+              </td>
+              <td>
+                <input type="number" id="appleQty" name="appleQty" value="0" min="0" />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img src="banana.jpg" alt="Banana" style="width: 50px; height: 50px;" />
+              </td>
+              <td>
+                <input type="checkbox" id="bananaSelect" name="bananaSelect" />
+                <label for="bananaSelect">Banana $5/kg</label>
+              </td>
+              <td>
+                <input type="number" id="bananaQty" name="bananaQty" value="0" min="0" />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img src="avacado.png" alt="Avocado" style="width: 50px; height: 50px;" />
+              </td>
+              <td>
+                <input type="checkbox" id="avocadoSelect" name="avocadoSelect" />
+                <label for="avocadoSelect">Avocado $7/kg</label>
+              </td>
+              <td>
+                <input type="number" id="avocadoQty" name="avocadoQty" value="0" min="0" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br />
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("orderForm").addEventListener("submit", function(e) {
+        if (!document.getElementById("appleSelect").checked) {
+          document.getElementById("appleQty").value = 0;
+        }
+        if (!document.getElementById("bananaSelect").checked) {
+          document.getElementById("bananaQty").value = 0;
+        }
+        if (!document.getElementById("avocadoSelect").checked) {
+          document.getElementById("avocadoQty").value = 0;
+        }
+      });
+    </script>
+  </body>
+</html>

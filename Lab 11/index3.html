@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1476</title>
+    <style>
+        body {
+            font-family: serif;
+        }
+        .form-container {
+            border: 1px solid black;
+            padding: 10px;
+            width: 600px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .time-box {
+            border: 1px solid black;
+            padding: 3px 5px;
+        }
+        .form-row {
+            display: flex;
+            margin: 8px 0;
+            align-items: center;
+        }
+        .label {
+            width: 200px;
+        }
+        .input-field {
+            width: 200px;
+        }
+        .error {
+            color: red;
+            margin-left: 10px;
+        }
+        .required {
+            color: red;
+        }
+        .pan-container {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+            width: 200px;
+        }
+        select {
+            width: 212px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="header">
+            <h2>Test JavaScript Form Validataion</h2>
+            <div class="time-box" id="current-time">Time: 11:30:55</div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Name<span class="required">*</span></div>
+            <div><input type="text" name="name" class="input-field"></div>
+            <div class="error">Please enter your name!</div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Address</div>
+            <div><input type="text" name="address" class="input-field"></div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Zip Code<span class="required">*</span></div>
+            <div><input type="text" name="zipcode" class="input-field"></div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Country<span class="required">*</span></div>
+            <div>
+                <select name="country" class="input-field">
+                    <option selected>Please select</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Gender<span class="required">*</span></div>
+            <div>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="female">Female</label>
+            </div>
+            <div class="pan-container">
+                <div>Pan No:</div>
+                <div style="margin-left: 5px;"><input type="text" name="panno"></div>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Preferences<span class="required">*</span></div>
+            <div>
+                <input type="checkbox" name="preferences" value="red" id="red">
+                <label for="red">Red</label>
+                <input type="checkbox" name="preferences" value="green" id="green">
+                <label for="green">Green</label>
+                <input type="checkbox" name="preferences" value="blue" id="blue">
+                <label for="blue">Blue</label>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Phone<span class="required">*</span></div>
+            <div><input type="tel" name="phone" class="input-field"></div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Email<span class="required">*</span></div>
+            <div><input type="email" name="email" class="input-field"></div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">password (6-8 characters)<span class="required">*</span></div>
+            <div><input type="password" name="password" class="input-field"></div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Verify password<span class="required">*</span></div>
+            <div><input type="password" name="verifypassword" class="input-field"></div>
+        </div>
+        
+        <div class="buttons">
+            <input type="button" value="SEND">
+            <input type="button" value="CLEAR">
+        </div>
+    </div>
+
+    <script src = "script3.js"></script>
+
+</body>
+</html>

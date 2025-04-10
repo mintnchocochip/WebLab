@@ -1,0 +1,8 @@
+.ext_button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 10;
+    cursor: pointer;
+  }

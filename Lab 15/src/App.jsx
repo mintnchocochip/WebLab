@@ -1,58 +1,108 @@
-import React from 'react'
-import Counter from './components/Counter'
-import CounterWithReducer from './components/CounterWithReducer'
-import JokeFetcher from './components/JokeFetcher'
-import FocusForm from './components/FocusForm'
-import { ThemeProvider } from './context/ThemeContext'
-import ThemeToggler from './components/ThemeToggler'
-import Parent from './components/Parent'
-import './App.css'
+import React, { useState } from "react";
+import Header from "./Header.jsx";
+import Contents from "./Contents.jsx";
+import Footer from "./Footer.jsx";
+import LifecycleDemo from "./LifeCycleDemo.jsx";
+import Counter from "./Counter.jsx";
+import CounterReducer from "./CounterReducer.jsx";
+import FetchJoke from "./FetchJoke.jsx";
+import InputFocus from "./InputFocus.jsx";
+import { ThemeProvider, ThemedComponent } from "./ThemedComponent.jsx";
+import ParentChild from "./ParentChild.jsx";
+import ChildValidation from "./ChildValidation.jsx";
+import FormWithState from "./FormWithState.jsx";
+import FormWithRef from "./FormWithRef.jsx";
+import StyledButtonExternal from "./StyledButtonExt.jsx";
+import StyledButtonInternal from "./StyledButtonInt.jsx";
+import "./styles.css";
 
 function App() {
+  const [showLifecycleDemo, setShowLifecycleDemo] = useState(true);
+
+  const toggleLifecycleDemo = () => {
+    setShowLifecycleDemo((prev) => !prev);
+  };
+
   return (
     <ThemeProvider>
-      <div className="app-container">
-        <h1>React Hooks & Props Demo</h1>
-        
-        <ThemeToggler />
-        
+      <Header title="React Exercise 15" />
+
+      <main>
         <section>
-          <h2>6. State Hooks</h2>
-          <div className="demo-row">
-            <div className="demo-box">
-              <h3>useState Hook</h3>
-              <Counter />
-            </div>
-            
-            <div className="demo-box">
-              <h3>useReducer Hook</h3>
-              <CounterWithReducer />
-            </div>
-          </div>
+          <h2>Question 1</h2>
+          <Contents />
         </section>
+
         <section>
-          <h2>7. Effect Hooks (useEffect)</h2>
-          <div className="demo-box">
-            <JokeFetcher />
-          </div>
+          <h2>Question 2, 3, 4 - Styled Buttons</h2>
+          <button style={{ backgroundColor: "blue", padding: "10px", fontSize: "16px" }}>
+            Inline CSS Button
+          </button>
+          <br />
+          <br />
+          <StyledButtonInternal />
+          <br />
+          <br />
+          <StyledButtonExternal />
         </section>
-        
+
         <section>
-          <h2>8. Ref Hooks (useRef)</h2>
-          <div className="demo-box">
-            <FocusForm />
-          </div>
+          <h2>Question 5 - Lifecycle Methods</h2>
+          <button onClick={toggleLifecycleDemo}>
+            {showLifecycleDemo ? "Unmount LifecycleDemo" : "Mount LifecycleDemo"}
+          </button>
+          {showLifecycleDemo && <LifecycleDemo />}
         </section>
-        
+
         <section>
-          <h2>9-11. Props & Context</h2>
-          <div className="demo-box">
-            <Parent />
-          </div>
+          <h2>Question 6 - Counter (useState Hook)</h2>
+          <Counter />
         </section>
-      </div>
+
+        <section>
+          <h2>Question 6 - Counter (useReducer Hook)</h2>
+          <CounterReducer />
+        </section>
+
+        <section>
+          <h2>Question 7 - Fetch API (Joke)</h2>
+          <FetchJoke />
+        </section>
+
+        <section>
+          <h2>Question 8 - Input Focus (useRef)</h2>
+          <InputFocus />
+        </section>
+
+        <section>
+          <h2>Question 9 - Themed Component (useContext)</h2>
+          <ThemedComponent />
+        </section>
+
+        <section>
+          <h2>Question 10 - Props Passing</h2>
+          <ParentChild />
+        </section>
+
+        <section>
+          <h2>Question 11 - Props Validation</h2>
+          <ChildValidation message="Hello from Parent" />
+        </section>
+
+        <section>
+          <h2>Question 12 (i) - Form with useState</h2>
+          <FormWithState />
+        </section>
+
+        <section>
+          <h2>Question 12 (ii) - Form with useRef</h2>
+          <FormWithRef />
+        </section>
+      </main>
+
+      <Footer />
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;

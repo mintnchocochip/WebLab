@@ -1,10 +1,10 @@
 import React from "react";
-import profilePic from "./Images/image.png"; // Example image from src
+import profilePic from "./images/image.png"; // Example image from src
 import "./App.css"; // Importing CSS for styling
 
 const ImageComponent = () => (
   <div className="image-container">
-    <img src="./Images/image.png" alt="Public" className="image" height = "100"/>
+    <img src="./images/image.png" alt="Public" className="image" height = "100"/>
     <img src={profilePic} alt="Src" className="image" />
   </div>
 );
